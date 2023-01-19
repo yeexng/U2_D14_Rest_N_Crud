@@ -20,9 +20,9 @@ window.onload = async () => {
       let response = await fetch(url + "/" + id);
       if (response.ok) {
         let { name, description, price, imgURL } = await res.json();
-        document.querySelector("#eventPrice").value = price;
         document.querySelector("#eventName").value = name;
         document.querySelector("#eventDescription").value = description;
+        document.querySelector("#eventPrice").value = price;
         document.querySelector("#eventImgURL").value = imgURL;
       } else {
         console.log(res);
@@ -36,7 +36,18 @@ window.onload = async () => {
 
 const handleNewEvent = async (submitEvents) => {
   try {
-    submitEvents;
+    submitEvents.preventDefault();
+    const name = document.querySelector("#eventName");
+    const description = document.querySelector("#eventDescription").value;
+    const price = document.querySelector("#eventPrice").value;
+    const imgURL = document.querySelector("#eventImgURL").value;
+    const options = {
+      method: "POST", //we want to create
+      body: JSON.stringify(newEvent), //what we are sending
+      headers: new Headers({
+        "Content-Type": "application/json", //this is the language we are speaking!
+      }),
+    };
   } catch (error) {}
 };
 
