@@ -46,6 +46,8 @@ const handleNewEvent = async (submitEvents) => {
       body: JSON.stringify(newEvent), //what we are sending
       headers: new Headers({
         "Content-Type": "application/json", //this is the language we are speaking!
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5NGRkNWU3MzczODAwMTUzNzQ0MDYiLCJpYXQiOjE2NzQxMzcwNDUsImV4cCI6MTY3NTM0NjY0NX0.wl8FcslPN4SA6d6Hsg7Y3Wm7mNhAtVgT9M3KxWUm1wY",
       }),
     };
   } catch (error) {}
